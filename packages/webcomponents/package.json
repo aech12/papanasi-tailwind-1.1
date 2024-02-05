@@ -1,0 +1,46 @@
+{
+  "name": "@papanasi/webcomponents",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "ckgrafico/papanasi",
+  "description": "Papanasi Web Components UI Library",
+  "main": "./dist/papanasi-webcomponents.umd.js",
+  "module": "./dist/papanasi-webcomponents.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/papanasi-webcomponents.es.js",
+      "require": "./dist/papanasi-webcomponents.umd.js"
+    },
+    "./papanasi.css": {
+      "import": "./dist/papanasi.css",
+      "require": "./dist/papanasi.css"
+    },
+    "./custom-elements.json": {
+      "import": "./custom-elements.json",
+      "require": "./custom-elements.json"
+    }
+  },
+  "dependencies": {
+    "codejar": "^3.6.0",
+    "copy-to-clipboard": "^3.3.2",
+    "ssr-window": "^4.0.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "copyfiles ../../.themes/** ./dist/ --flat",
+    "build": "run-s build:**",
+    "build:code": "rollup -c",
+    "build:styles": "replace \"\\.pa-(.*?)((--|__).*?)?((\\.pa|\\.is|\\.has).*?)?(,|:|{)\" \"pa-$1::part(pa-$1$2 $4)$6\" ./dist -r --include=\"*.es.js,*.umd.js,*.css\"",
+    "build:styles-classes-css": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.css\"",
+    "build:styles-classes-states": "replace \"(::part\\(.*?)\\.(pa-|is-|has-)(.*?)(\\))\" \"$1 $2$3$4\" ./dist -r --include=\"*.css\"",
+    "build:styles-classes-js": "replace \" \\.(pa-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.es.js,*.umd.js\"",
+    "build:schema": "custom-elements-manifest analyze"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "f2eefa7b93814a19363b851fc037688813bc9ed8"
+}

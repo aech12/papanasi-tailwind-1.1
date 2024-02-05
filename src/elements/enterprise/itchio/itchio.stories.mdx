@@ -1,0 +1,123 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Itchio, Button } from '../../../../packages/react/src';
+import { Customization, Codesandbox } from '../../../../.storybook/components';
+
+<Meta title="🧩Elements/Enterprise/Itchio" component={Itchio} />
+
+export const Template = (args) => (
+  <Itchio {...args}>
+    <Button variant="tertiary">Buy it</Button>
+  </Itchio>
+);
+
+# Itchio
+
+A component to show a widget with your game from https://itch.io, also accepts a children to attach an action that will open the `buy game` pop up.
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Itchio"
+    args={{ user: 'ckgrafico', game: 'alice-ring', width: 800, height: 600, secret: '', slotLoading: 'Loading...' }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization
+  selector=".pa-itchio"
+  css={`
+    --pa-itchio-image-size: 10rem;
+    --pa-itchio-padding: 0.58rem;
+    --pa-itchio-background: var(--pa-color-basic-brightest);
+    --pa-itchio-radius: var(--pa-border-radius-small);
+    --pa-itchio-title-size: var(--pa-font-size-large);
+    --pa-itchio-title-weight: var(--pa-font-weight-medium);
+    --pa-itchio-price-size: var(--pa-font-size-small);
+    --pa-itchio-price-weight: var(--pa-font-weight-medium);
+  `}
+/>
+
+### Properties
+
+<ArgsTable story="Itchio" of={Itchio} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Itchio']}
+  platform="angular"
+  code={`
+    <itchio user="ckgrafico" game="alice-ring"><span>Click me</span></itchio>`}
+/>
+
+### Preact
+
+<Codesandbox
+  components={['Itchio']}
+  platform="preact"
+  code={`
+    <Itchio user="ckgrafico" game="alice-ring"  width={800} height={600}><span>Click me</span></Itchio>`}
+/>
+
+### Qwik
+
+> Note: Render on Client-side only
+
+<Codesandbox
+  components={['Itchio']}
+  platform="qwik"
+  code={`
+    <Itchio user="ckgrafico" game="alice-ring"  width={800} height={600}><span>Click me</span></Itchio>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Itchio']}
+  platform="react"
+  code={`
+    <Itchio user="ckgrafico" game="alice-ring"  width={800} height={600}><span>Click me</span></Itchio>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Itchio']}
+  platform="solid"
+  code={`
+    <Itchio user="ckgrafico" game="alice-ring"><span>Click me</span></Itchio>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Itchio']}
+  platform="svelte"
+  code={`
+    <Itchio user="ckgrafico" game="alice-ring"><span>Click me</span></Itchio>`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Itchio']}
+  platform="vue"
+  code={`
+    <Itchio user="ckgrafico" game="alice-ring"><span>Click me</span></Itchio>`}
+/>
+
+### Web Components
+
+<Codesandbox
+  components={['Itchio']}
+  platform="webcomponents"
+  code={`<pa-itchio user="ckgrafico" game="alice-ring">
+  <span>Click me</span>
+</pa-itchio>`}
+/>

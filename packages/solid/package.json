@@ -1,0 +1,40 @@
+{
+  "name": "@papanasi/solid",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "ckgrafico/papanasi",
+  "description": "Papanasi Solid JS UI Library",
+  "source": "./solid-index.tsx",
+  "main": "dist/cjs/papanasi.js",
+  "module": "dist/esm/papanasi.js",
+  "types": "dist/types/papanasi.d.ts",
+  "exports": {
+    ".": {
+      "solid": "./dist/index/index.js",
+      "import": "./dist/esm/papanasi.js",
+      "browser": "./dist/esm/papanasi.js",
+      "require": "./dist/cjs/papanasi.js",
+      "node": "./dist/cjs/papanasi.js"
+    },
+    "./papanasi.css": {
+      "import": "./dist/papanasi.css",
+      "require": "./dist/papanasi.css"
+    }
+  },
+  "dependencies": {
+    "codejar": "^3.6.0",
+    "copy-to-clipboard": "^3.3.2",
+    "ssr-window": "^4.0.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "postbuild": "node ./copy-css.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "f2eefa7b93814a19363b851fc037688813bc9ed8"
+}

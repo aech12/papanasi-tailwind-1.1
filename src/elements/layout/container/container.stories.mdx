@@ -1,0 +1,127 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Container } from '../../../../packages/react/src';
+import { variants, Intent, intents } from '../../../models';
+import { Customization, Codesandbox } from '../../../../.storybook/components';
+
+<Meta
+  title="🧩Elements/Layout/Container"
+  component={Container}
+  argTypes={{
+    fluid: {
+      name: 'fluid',
+      description: 'Let the container grow to max',
+      table: {},
+      control: {
+        type: 'boolean'
+      }
+    }
+  }}
+/>
+
+export const Template = (args) => <Container {...args}>Container</Container>;
+
+# Container
+
+Containers are the most simple element from layout category, are use to contain any other elements as wrapper and will adapt its width to `--pa-grid-container-max-width` or can be adapted to `100%` using `fluid` property.
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Container"
+    args={{
+      fluid: false
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization
+  css={`
+    --pa-grid-gutter: 0.15rem;
+    --pa-grid-gutter-horizontal: var(--pa-grid-gutter);
+    --pa-grid-gutter-vertical: var(--pa-grid-gutter);
+    --pa-grid-max-width: var(--pa-breakpoint-xl);
+  `}
+  showSelect={false}
+/>
+
+### Properties
+
+<ArgsTable story="Container" of={Container} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Container']}
+  platform="angular"
+  code={`
+    <container fluid="true">Your content</container>`}
+/>
+
+### Preact
+
+<Codesandbox
+  components={['Container']}
+  platform="preact"
+  code={`
+    <Container fluid>Your content</Container>`}
+/>
+
+### Qwik
+
+<Codesandbox
+  components={['Container']}
+  platform="qwik"
+  code={`
+    <Container fluid>Your content</Container>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Container']}
+  platform="react"
+  code={`
+    <Container fluid>Your content</Container>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Container']}
+  platform="solid"
+  code={`
+    <Container fluid>Your content</Container>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Container']}
+  platform="svelte"
+  code={`
+    <Container fluid>Your content</Container>`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Container']}
+  platform="vue"
+  code={`
+    <Container :fluid="true">Your Content</Container>`}
+/>
+
+### Web Components
+
+<Codesandbox
+  components={['Container']}
+  platform="webcomponents"
+  code={`<pa-container fluid="true">Your content</pa-container>`}
+/>

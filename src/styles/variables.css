@@ -1,0 +1,98 @@
+:root {
+  /* Border */
+  --pa-border-radius-small: 4px;
+  --pa-border-width-small: 1px;
+
+  /* Breakpoints */
+  --pa-breakpoint-xxs: 360px;
+  --pa-breakpoint-xs: 640px;
+  --pa-breakpoint-s: 768px;
+  --pa-breakpoint-m: 1024px;
+  --pa-breakpoint-l: 1280px;
+  --pa-breakpoint-xl: 1440px;
+  --pa-breakpoint-xxl: 1920px;
+
+  /* Color Basic */
+  --pa-color-basic-brightest: #ffffff;
+  --pa-color-basic-brighter: #f3f3f5;
+  --pa-color-basic-bright: #d8dadf;
+  --pa-color-basic-normal: #b3b5bb;
+  --pa-color-basic-dark: #686c7c;
+  --pa-color-basic-darker: #464b5f;
+  --pa-color-basic-darkest: #101116;
+
+  /* Color Primary, Secondary, Tertiary are in tjemes/papanasi/variables */
+
+  /* Color Info */
+  --pa-color-info-brightest: #a3f5fe;
+  --pa-color-info-brighter: #8ff2fe;
+  --pa-color-info-bright: #67eefe;
+  --pa-color-info-normal: #02d0e8;
+  --pa-color-info-dark: #029eb0;
+  --pa-color-info-darker: #016c79;
+  --pa-color-info-darkest: #013a41;
+
+  /* Color Success */
+  --pa-color-success-brightest: #cbf4e6;
+  --pa-color-success-brighter: #baf0de;
+  --pa-color-success-bright: #99e9ce;
+  --pa-color-success-normal: #34d39d;
+  --pa-color-success-dark: #25aa7d;
+  --pa-color-success-darker: #1b7c5b;
+  --pa-color-success-darkest: #114e39;
+
+  /* Color Warning */
+  --pa-color-warning-brightest: #fff7e3;
+  --pa-color-warning-brighter: #ffe5a5;
+  --pa-color-warning-bright: #ffd97d;
+  --pa-color-warning-normal: #ffc12b;
+  --pa-color-warning-dark: #f2ab00;
+  --pa-color-warning-darker: #ba8300;
+  --pa-color-warning-darkest: #825c00;
+
+  /* Color Error */
+  --pa-color-error-brightest: #fcdada;
+  --pa-color-error-brighter: #f9b5b5;
+  --pa-color-error-bright: #f58f8f;
+  --pa-color-error-normal: #f15050;
+  --pa-color-error-dark: #e71414;
+  --pa-color-error-darker: #b30f0f;
+  --pa-color-error-darkest: #5c0404;
+
+  /* Font */
+  --pa-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --pa-font-size-small: 0.75rem;
+  --pa-font-size-normal: 1rem;
+  --pa-font-size-large: 1.25rem;
+  --pa-font-size: 1rem;
+  --pa-font-weight-normal: 400;
+  --pa-font-weight-medium: 500;
+  --pa-font-weight-bold: 600;
+  --pa-font-weight-black: 700;
+
+  /* Grid */
+  --pa-grid-gutter: 0.15rem;
+  --pa-grid-gutter-horizontal: var(--pa-grid-gutter);
+  --pa-grid-gutter-vertical: var(--pa-grid-gutter);
+  --pa-grid-max-width: var(--pa-breakpoint-xl);
+
+  /* Outline */
+  --pa-outline-width: 4px;
+
+  /* Shadow */
+  --pa-shadow-normal: var(--pa-color-basic-bright) 0 1px 3px 0;
+
+  /* Transition */
+  --pa-transition-all: all;
+  --pa-transition-colors: background-color, border-color, color, fill, stroke, outline-color;
+  --pa-transition-opacity: opacity;
+  --pa-transition-shadow: box-shadow;
+  --pa-transition-transform: transform;
+
+  --pa-transition-duration-fast: 150ms;
+  --pa-transition-duration-normal: 300ms;
+  --pa-transition-duration-slow: 600s;
+
+  /* ZIndex */
+  --pa-zindex-max: 10000;
+}

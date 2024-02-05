@@ -1,0 +1,129 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Pill } from '../../../../packages/react/src';
+import { variants, Intent, intents } from '../../../models';
+import { Customization, Codesandbox } from '../../../../.storybook/components';
+
+<Meta
+  title="🧩Elements/Components/Pill"
+  component={Pill}
+  argTypes={{
+    intent: {
+      name: 'intent',
+      description: 'Specify a temporary intent for the pill',
+      table: {},
+      options: intents.map((x) => x.value),
+      control: { type: 'select' }
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div>
+    {variants.map((variant) => (
+      <Pill key={variant.key} {...args} variant={variant.value}>
+        {variant.key}
+      </Pill>
+    ))}
+  </div>
+);
+
+# Pill
+
+Pills are used to indicate a temporary state or show higlighted values.
+There are 3 different variants `primary`, `secondary` and `tertiary` or the one you decide to create, but also other 4 intents `info`, `success`, `warning` and `error`.
+
+## Showcase
+
+<Canvas>
+  <Story name="Pill" args={{ intent: '' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization
+  selector=".pa-pill"
+  css={`
+    --pa-color-basic-brightest: #ffffff;
+    --pa-color-basic-darkest: #101116;
+    --pa-color-primary-normal: #017aff;
+    --pa-color-secondary-normal: #6c47ff;
+    --pa-color-tertiary-normal: #f34971;
+    --pa-pill-radius: 10rem;
+    --pa-pill-font-weight: var(--pa-font-weight-medium);
+  `}
+/>
+
+### Properties
+
+<ArgsTable story="Pill" of={Pill} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Pill']}
+  platform="angular"
+  code={`
+    <pill variant="primary">Primary</pill>`}
+/>
+
+### Preact
+
+<Codesandbox
+  components={['Pill']}
+  platform="preact"
+  code={`
+    <Pill variant="primary">Primary</Pill>`}
+/>
+
+### Qwik
+
+<Codesandbox
+  components={['Pill']}
+  platform="qwik"
+  code={`
+    <Pill variant="primary">Primary</Pill>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Pill']}
+  platform="react"
+  code={`
+    <Pill variant="primary">Primary</Pill>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Pill']}
+  platform="solid"
+  code={`
+    <Pill variant="primary">Primary</Pill>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Pill']}
+  platform="svelte"
+  code={`
+    <Pill variant="primary">Primary</Pill>`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Pill']}
+  platform="vue"
+  code={`
+    <Pill variant="primary">Primary</Pill>`}
+/>
+
+### Web Components
+
+<Codesandbox components={['Pill']} platform="webcomponents" code={`<pa-pill variant="primary">Primary</pa-pill>`} />

@@ -1,0 +1,11 @@
+{
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "ignoreChanges": ["*.md", "stats.html", ".spec.ts", ".stories.ts"]
+    }
+  },
+  "packages": ["packages/*"],
+  "version": "1.0.0"
+}

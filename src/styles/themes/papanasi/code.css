@@ -1,0 +1,58 @@
+@import '../../build.css';
+
+.pa-code {
+  @mixin shared-styles;
+
+  border-radius: var(--pa-border-radius-small);
+  box-shadow: var(--pa-shadow-normal);
+  border: var(--pa-border-width-small) solid var(--pa-color-basic-brighter);
+  width: 100%;
+  overflow: hidden;
+
+  &__actions {
+    background: var(--pa-color-basic-brightest);
+    backdrop-filter: blur(2px);
+  }
+
+  &__action {
+    background-color: var(--pa-color-basic-brightest);
+    border: var(--pa-border-width-small) solid var(--pa-color-basic-bright);
+    border-right: 0;
+    border-bottom: 0;
+    transition-duration: var(--pa-transition-duration-normal);
+    transition-property: var(--pa-transition-colors);
+
+    &:hover {
+      background-color: var(--pa-color-basic-brighter);
+    }
+
+    &--text:hover {
+      background-color: var(--pa-color-basic-brightest);
+    }
+
+    &:nth-child(1) {
+      border-top-left-radius: var(--pa-border-radius-small);
+
+      &:hover {
+        background-color: inherit;
+      }
+    }
+  }
+
+  &__link {
+    color: var(--pa-color-basic-darkest);
+    font-size: var(--pa-font-size-small);
+    font-weight: var(--pa-font-weight-black);
+    text-decoration: none;
+  }
+
+  .language-css,
+  .language-scss {
+    .hljs-number {
+      @mixin background-opacity var(--number-color), 0.05;
+
+      color: var(--number-color);
+      filter: brightness(0.9);
+    }
+  }
+}

@@ -1,0 +1,176 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Code } from '../../../../packages/react/src';
+import { Customization, Codesandbox } from '../../../../.storybook/components';
+
+<Meta
+  title="🧩Elements/Components/Code"
+  component={Code}
+  argTypes={{
+    editable: {
+      name: 'editable',
+      description: 'Let the user edit the code',
+      table: {},
+      control: {
+        type: 'boolean'
+      }
+    },
+    disableCopy: {
+      name: 'disableCopy',
+      description: 'Disable the copy button',
+      table: {},
+      control: {
+        type: 'boolean'
+      }
+    },
+    language: {
+      name: 'language',
+      description:
+        'Language to highlight, complete list https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md',
+      table: {},
+      options: ['javascript', 'typescript', 'css', 'scss', 'json', 'xml', 'markdown'],
+      control: { type: 'select' }
+    },
+    theme: {
+      name: 'theme',
+      description:
+        'Theme to use in the editor, are from https://github.com/highlightjs/highlight.js/tree/main/src/styles but not all are included',
+      table: {},
+      options: ['default', 'dark', 'atom-one-light', 'atom-one-dark', 'github', 'monokai'],
+      control: { type: 'select' }
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div>
+    <Code {...args} slotCopy={<span>Copy</span>}></Code>
+  </div>
+);
+
+# Code
+
+The Code component is created to highlight code blocks in your application, is a wrapper of [codejar](https://medv.io/codejar/) and [highlight.js](https://highlightjs.org/) and any of the themes or languages supported there are also supported in this library.
+By default we support `javascript`, `jsx`, `typescript`, `tsx`, `css`, `markdown`, or any `xml` based language. If you need other languages you can import them from `highlight.js` like `import jsLanguage from 'highlight.js/lib/languages/javascript';` and add to the dictionary of languages `addCodeLanguage('javascript', jsLanguage')`.
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Code"
+    args={{
+      editable: true,
+      language: 'javascript',
+      theme: 'github',
+      disableCopy: false,
+      code:
+        "import React from 'react'; \n\n" +
+        'type CardProps = { \n' +
+        '  title: string, \n' +
+        '  paragraph: string \n' +
+        '} \n\n' +
+        'export const Card = (props: CardProps) => { \n' +
+        '  const { title, paragraph } = props; \n\n' +
+        '  return ( \n' +
+        '    <aside> \n' +
+        '      <h2>{title}</h2> \n' +
+        '      <p>{paragraph}</p> \n' +
+        '    </aside> \n' +
+        '  ); \n' +
+        '}; \n\n' +
+        "const el = <Card title='Hello and welcome!' paragraph='To this papanasi' />\n"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization showCode={false} />
+
+### Properties
+
+<ArgsTable story="Code" of={Code} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Code']}
+  platform="angular"
+  dependencies={{ 'highlight.js': '11.6.0' }}
+  code={`
+    <div pa-code editable="true" language="javascript" theme="github" code="const age = 1;"></div>`}
+/>
+
+### Preact
+
+<Codesandbox
+  components={['Code']}
+  platform="preact"
+  dependencies={{ 'highlight.js': '11.6.0' }}
+  code={`
+    <Code editable language='javascript' theme="github" code="const age = 1;"></Code>`}
+/>
+
+### Qwik
+
+> Note: Render on Client-side only
+
+<Codesandbox
+  components={['Code']}
+  platform="qwik"
+  dependencies={{ 'highlight.js': '11.6.0' }}
+  code={`
+    <Code editable language='javascript' theme="github" code="const age = 1;"></Code>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Code']}
+  platform="react"
+  dependencies={{ 'highlight.js': '11.6.0' }}
+  code={`
+    <Code editable language='javascript' theme="github" code="const age = 1;"></Code>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Code']}
+  platform="solid"
+  dependencies={{ 'highlight.js': '11.6.0' }}
+  code={`
+    <Code editable language='javascript' theme="github" code="const age = 1;"></Code>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Code']}
+  platform="svelte"
+  dependencies={{ 'highlight.js': '11.6.0' }}
+  code={`
+    <Code editable language='javascript' theme="github" code="const age = 1;"></Code>`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Code']}
+  platform="vue"
+  dependencies={{ 'highlight.js': '11.6.0' }}
+  code={`
+    <Code :editable="true" language="javascript" theme="github" code="const age = 1;"></Code>`}
+/>
+
+### Web Components
+
+<Codesandbox
+  components={['Code']}
+  platform="webcomponents"
+  dependencies={{ 'highlight.js': '11.6.0' }}
+  code={`<pa-code editable="true" language="javascript" theme="github" code="const age = 1;"></pa-code>`}
+/>

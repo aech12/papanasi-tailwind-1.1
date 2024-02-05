@@ -1,0 +1,31 @@
+@import '../../build.css';
+
+.pa-pill {
+  @mixin shared-styles;
+
+  --pa-pill-radius: 10rem;
+  --pa-pill-font-weight: var(--pa-font-weight-medium);
+
+  background-color: var(--pa-color-basic-brightest);
+  border-color: var(--pa-color-basic-bright);
+  border-radius: var(--pa-pill-radius);
+  color: var(--pa-color-basic-darker);
+  font-weight: var(--pa-pill-font-weight);
+  transition-duration: var(--pa-transition-duration-normal);
+  transition-property: var(--pa-transition-colors);
+
+  @each $variant in primary, secondary, tertiary {
+    &--$(variant) {
+      background-color: var(--pa-color-$(variant)-normal);
+      border-color: transparent;
+      color: var(--pa-color-basic-brightest);
+    }
+  }
+
+  @each $intent in info, success, warning, error {
+    &.is-$(intent) {
+      background-color: var(--pa-color-$(intent)-bright);
+      color: var(--pa-color-$(intent)-darkest);
+    }
+  }
+}

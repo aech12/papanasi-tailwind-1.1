@@ -1,0 +1,52 @@
+{
+  "name": "@papanasi/qwik",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "ckgrafico/papanasi",
+  "description": "Papanasi Qwik UI Library",
+  "type": "module",
+  "main": "./lib/index.qwik.mjs",
+  "qwik": "./lib/index.qwik.mjs",
+  "module": "./lib/index.qwik.mjs",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./types/index.d.ts"
+    },
+    "./style.css": {
+      "import": "./lib/style.css",
+      "require": "./lib/style.css"
+    },
+    "./papanasi.css": {
+      "import": "./lib/papanasi.css",
+      "require": "./lib/papanasi.css"
+    }
+  },
+  "dependencies": {
+    "codejar": "^3.6.0",
+    "copy-to-clipboard": "^3.3.2",
+    "copyfiles": "^2.4.1",
+    "highlight.js": "^11.6.0",
+    "ssr-window": "^4.0.2"
+  },
+  "peerDependencies": {
+    "@builder.io/qwik": "^0.x"
+  },
+  "files": [
+    "lib",
+    "types"
+  ],
+  "scripts": {
+    "prebuild": "yarn install",
+    "build": "qwik build",
+    "build.lib": "vite build --mode lib",
+    "build.types": "tsc --emitDeclarationOnly",
+    "postbuild": "copyfiles ../../.themes/** ./lib/ --flat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "f2eefa7b93814a19363b851fc037688813bc9ed8"
+}

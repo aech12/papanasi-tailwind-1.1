@@ -1,0 +1,130 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Row, Container, Column } from '../../../../packages/react/src';
+import { variants, Intent, intents } from '../../../models';
+import { getBreakpointArgTypes } from '../../../helpers';
+import { Customization, Codesandbox } from '../../../../.storybook/components';
+
+<Meta
+  title="🧩Elements/Layout/Row"
+  component={Row}
+  argTypes={{
+    ...getBreakpointArgTypes('Direction in {breakpoint}', ['', 'row', 'column', 'row-reverse', 'column-reverse'])
+  }}
+/>
+
+export const Template = (args) => (
+  <Container>
+    <Row {...args}>
+      <Column>Row</Column>
+    </Row>
+  </Container>
+);
+
+# Row
+
+Rows are layout elements that can contain a group of other elements using flex properties. They can be used to create a grid of elements.
+
+The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`, `l`, `xl` and `xxl` and the supported directions are: `row`, `column`, `row-reverse` and `column-reverse`.
+
+## Showcase
+
+<Canvas>
+  <Story name="Row" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization
+  css={`
+    --pa-grid-gutter: 0.15rem;
+    --pa-grid-gutter-horizontal: var(--pa-grid-gutter);
+    --pa-grid-gutter-vertical: var(--pa-grid-gutter);
+    --pa-grid-max-width: var(--pa-breakpoint-xl);
+  `}
+  showSelect={false}
+/>
+
+### Properties
+
+<ArgsTable story="Row" of={Row} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Row']}
+  platform="angular"
+  code={`
+    <row m="column" l="row"> Your content </row>`}
+/>
+
+### Preact
+
+<Codesandbox
+  components={['Row']}
+  platform="preact"
+  code={`
+    <Row m="column" l="row">
+      Your content
+    </Row>`}
+/>
+
+### Qwik
+
+<Codesandbox
+  components={['Row']}
+  platform="qwik"
+  code={`
+    <Row m="column" l="row">
+      Your content
+    </Row>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Row']}
+  platform="react"
+  code={`
+    <Row m="column" l="row">
+      Your content
+    </Row>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Row']}
+  platform="solid"
+  code={`
+    <Row m="column" l="row">
+      Your content
+    </Row>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Row']}
+  platform="svelte"
+  code={`
+    <Row m="column" l="row">
+      Your content
+    </Row>`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Row']}
+  platform="vue"
+  code={`
+    <Row m="column" l="row">Your Content</Row>`}
+/>
+
+### Web Components
+
+<Codesandbox components={['Row']} platform="webcomponents" code={`<pa-row m="column" l="row">Your content</pa-row>`} />

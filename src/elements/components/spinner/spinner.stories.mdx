@@ -1,0 +1,148 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Spinner } from '../../../../packages/react/src';
+import { variants, Variant, Intent, intents } from '../../../models';
+import { Customization, Codesandbox } from '../../../../.storybook/components';
+
+<Meta
+  title="🧩Elements/Components/Spinner"
+  component={Spinner}
+  argTypes={{
+    full: {
+      name: 'full',
+      description: 'Show a full spinner',
+      table: {},
+      control: {
+        type: 'boolean'
+      }
+    },
+    fullscreen: {
+      name: 'fullscreen',
+      description: 'Show a full screen spinner',
+      table: {},
+      control: {
+        type: 'boolean'
+      }
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div>
+    <>
+      {variants.map((variant) => {
+        if (variant.value === Variant.Basic) {
+          return <Spinner key={variant.key} {...args} variant={variant.value} />;
+        } else {
+          return <Spinner key={variant.key} variant={variant.value} />;
+        }
+      })}
+    </>
+  </div>
+);
+
+# Spinner
+
+This Spinner should cover most of the scenarios where you need to show a simple loading.
+By Spinner the color will be `basic`, but there are also 3 different variants `primary`, `secondary` and `tertiary`.
+You can also force to be `full` or `fullscreen` spinner if you don't want it inline.
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Spinner"
+    args={{
+      full: false,
+      fullscreen: false
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization
+  selector=".pa-spinner"
+  css={`
+    --pa-spinner-size: 3rem;
+    --pa-spinner-stroke: 4;
+    --pa-spinner-offset: 200;
+    --pa-spinner-duration: 4s;
+  `}
+/>
+
+### Properties
+
+<ArgsTable story="Spinner" of={Spinner} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Spinner']}
+  platform="angular"
+  code={`
+    <span pa-spinner variant="primary"></span>`}
+/>
+
+### Preact
+
+<Codesandbox
+  components={['Spinner']}
+  platform="preact"
+  code={`
+  <Spinner variant="primary" />`}
+/>
+
+### Qwik
+
+<Codesandbox
+  components={['Spinner']}
+  platform="qwik"
+  code={`
+  <Spinner variant="primary" />`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Spinner']}
+  platform="react"
+  code={`
+  <Spinner variant="primary" />`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Spinner']}
+  platform="solid"
+  code={`
+  <Spinner variant="primary" />`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Spinner']}
+  platform="svelte"
+  code={`
+  <Spinner variant="primary" />`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Spinner']}
+  platform="vue"
+  code={`
+  <Spinner variant="primary" />`}
+/>
+
+### Web Components
+
+> Note: Currently animations are not working well in shadow root
+
+<Codesandbox components={['Spinner']} platform="webcomponents" code={`<pa-spinner variant="primary"></pa-spinner>`} />
